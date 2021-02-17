@@ -22,7 +22,7 @@ namespace WebApiApp.BL
 
 			for (int i = 0; i < Count; i++)
 			{
-				_List.Add(new DTO.GroupModel() { Id = i, Name = $@"Group{i + 1}" });
+				_List.Add(new DTO.GroupModel() { Id = i + 1, Name = $@"Group{i + 1}" });
 			}
 
 			return _List.ToArray();

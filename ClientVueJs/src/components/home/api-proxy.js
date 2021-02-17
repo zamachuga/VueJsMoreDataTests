@@ -2,20 +2,14 @@
 import Services from '../../services/ServiceAxios.js';
 
 // Контроллер учетных записей.
-let _AuthController = "Auth";
+let _AuthController = "Dict";
 
-// Действие "Аутентификация".
-let _ActionLogIn = "LogIn";
-// Действие "Получить информацию учетной записи".
-let _ActionGetUserInfo = "GetUserInfo";
+// Действие "Получить список групп".
+let _ActionGetGroups = "GetGroups";
 
 export default {
 	// Аутентификация.
-	LogIn(Request, Try, Cath) {
-		Services.ServiceAxios.PostApi(_AuthController, _ActionLogIn, Request, Try, Cath);
-	},
-	// Получить информацию учетной записи.
-	GetUserInfo(Request, Try, Cath) {
-		Services.ServiceAxios.PostApi(_AuthController, _ActionGetUserInfo, Request, Try, Cath);
+	GetGroups(Request, Try, Cath) {
+		Services.ServiceAxios.PostApi(_AuthController, _ActionGetGroups, Request, Try, Cath);
 	}
 };

@@ -19,7 +19,7 @@ namespace WebApiApp
 
 
 
-		[HttpGet]
+		[HttpPost]
 		public DTO.GroupModel[] GetGroups(int CountGroupsResult = 1)
 		{
 			DTO.GroupModel[] _Model = m_Generator.Generate(CountGroupsResult);
