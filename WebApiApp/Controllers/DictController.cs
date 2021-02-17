@@ -13,13 +13,7 @@ namespace WebApiApp
 	public class DictController : ControllerBase
 	{
 		[HttpGet]
-		public string GetGroups()
-		{
-			throw new NotImplementedException();
-		}
-
-		[HttpGet]
-		public string GetGroup(int Id)
+		public string GetGroups(int CountGroupsResult = 1)
 		{
 			throw new NotImplementedException();
 		}

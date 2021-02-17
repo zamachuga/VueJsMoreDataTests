@@ -10,7 +10,6 @@ namespace WebApiApp.Controllers
 	public class HomeController : Controller
 	{
 		[HttpGet]
-		// GET: HomeController
 		public ActionResult Index()
 		{
 			return View();
