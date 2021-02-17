@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using WebApiApp.BL;
 using DTO = WebApiApp.Models.DTO;
 
 namespace WebApiApp
@@ -12,10 +8,23 @@ namespace WebApiApp
 	[ApiController]
 	public class DictController : ControllerBase
 	{
-		[HttpGet]
-		public string GetGroups(int CountGroupsResult = 1)
+		public DictController(GeneratorModels GeneratorModels)
 		{
-			throw new NotImplementedException();
+			m_Generator = GeneratorModels;
+		}
+
+
+
+		private GeneratorModels m_Generator;
+
+
+
+		[HttpGet]
+		public DTO.GroupModel[] GetGroups(int CountGroupsResult = 1)
+		{
+			DTO.GroupModel[] _Model = m_Generator.Generate(CountGroupsResult);
+
+			return _Model;
 		}
 	}
 }
