@@ -1,0 +1,18 @@
+<div class="Component" id="ComponentInfoAccount" v-if="store.IsAuth">
+	[Компонент InfoAccount]
+	<div>
+		<div>Учетная запись</div>
+		<div id="ul">
+			<div>Имя:</div>
+			<div>Вход:</div>
+			<div>Последняя активность:</div>
+			<div>Сессия истечет:</div>
+		</div>
+		<div>Сотрудник</div>
+		<div id="ul">
+			<div>ФИО:</div>
+			<div>Должность:</div>
+		</div>
+	</div>
+	<div><button class="ButtonRefresh" v-on:click="OnRefresh">Обновить</button></div>
+</div>
