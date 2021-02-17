@@ -1,0 +1,13 @@
+<div class="Component" id="ContainerComponentSession">
+	<div>
+		Форма авторизации пользователя.
+		<form class="FormLogIn">
+			<div>Имя пользователя: <input type="text" v-model="UserAuthDataRequestModel.username"></div>
+			<div>Пароль: <input type="password" v-model="UserAuthDataRequestModel.password"></div>
+			<br />
+			<div>
+				<button @click="OnLogIn">Аутентификация</button>
+			</div>
+		</form>
+	</div>
+</div>

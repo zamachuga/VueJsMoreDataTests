@@ -1,0 +1,14 @@
+<div class="Component" id="ContainerComponentApp">
+	<div>
+		<component-navi v-bind:store="store"></component-navi>
+	</div>
+	<div class="Component" id="ContainerErrorMessage">
+		Ошибки:<br />
+		<textarea id="TextAreaError" readonly></textarea>
+	</div>
+	<div id="ContainerComponents">
+		<keep-alive exclude="">
+			<router-view :store="store"></router-view>
+		</keep-alive>
+	</div>
+</div>

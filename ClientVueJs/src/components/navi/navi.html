@@ -1,0 +1,5 @@
+<div class="Component" id="ComponentNavi">
+	<router-link v-if="store.IsAuth" to="/" exact>[Главная]</router-link>
+	<router-link v-if="store.IsAuth" to="/infoaccount" exact>[Учетная запись]</router-link>
+	<router-link to="/session" exact>[Войти]</router-link>
+</div>
