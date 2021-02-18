@@ -2,8 +2,14 @@
 
 	<div>[Компонент HOME]</div>
 
-	<ul id="GoupsList">
-		<li v-for="item in Groups" :key="item.id"> {{item.Name}} </li>
-	</ul>
+	<div>
+		<b-button @click="ApiGetGroups()">Обновить список</b-button>
+
+		<b-dropdown split :text="DropDownData.CurrentText" class="m-2">
+			<b-dropdown-item v-for="item in Groups" :key="item.id" href="#" @click="OnSelect(item.Id, item.Name)">
+				{{item.Name}}
+			</b-dropdown-item>
+		</b-dropdown>
+	</div>
 
 </div>
