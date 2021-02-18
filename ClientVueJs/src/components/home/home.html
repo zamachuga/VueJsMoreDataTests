@@ -1,8 +1,9 @@
 <div class="Component" id="ComponentHome" v-if="store.IsAuth">
+
 	<div>[Компонент HOME]</div>
-	<ul id="example-1">
-		<li v-for="item in Groups" :key="item.id">
-			{{ item.id }}
-		</li>
+
+	<ul id="GoupsList">
+		<li v-for="item in Groups" :key="item.id"> {{item.Name}} </li>
 	</ul>
+
 </div>

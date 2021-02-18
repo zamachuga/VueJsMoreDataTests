@@ -3,8 +3,9 @@ export default {
 	props: ["store"],
 	data() {
 		return {
-			groups:[
-				{Id:0, Name:'NoNe'}
+			Groups:[
+				{Id:0, Name:'NoNe'},
+				{Id:1, Name:'adsad'}
 			]
 		}
 	}
