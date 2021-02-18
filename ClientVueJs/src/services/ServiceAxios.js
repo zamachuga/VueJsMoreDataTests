@@ -11,9 +11,9 @@ class ClassServiceAxios {
 		this.m_AxiosApi = axios.create({
 			headers: {
 				"Content-Type": "application/json",
-				"Access-Control-Allow-Origin": "*",
-				"Access-Control-Allow-Headers": "origin, x-requested-with, content-type, application/json, accept, */*",
-				"Access-Control-Allow-Methods": "PUT, GET, POST, DELETE, OPTIONS"
+				// "Access-Control-Allow-Origin": "http://localhost:8080",
+				// "Access-Control-Allow-Headers": "origin, x-requested-with, content-type",
+				// "Access-Control-Allow-Methods": "PUT, GET, POST, DELETE, OPTIONS"
 			}
 		});
 		this.m_AxiosApiAuth = axios.create({

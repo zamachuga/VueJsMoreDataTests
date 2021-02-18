@@ -26,21 +26,20 @@ namespace WebApiApp
 		// This method gets called by the runtime. Use this method to add services to the container.
 		public void ConfigureServices(IServiceCollection services)
 		{
-			//services.AddCors(o =>
-			//{
-			//	o.AddPolicy("MyLocalhost", b =>
-			//	{
-			//		b.WithOrigins(
-			//			"localhost", "http://localhost", 
-			//			"localhost:5000", "http://localhost:5000",
-			//			"localhost:8080", "http://localhost:8080"
-			//		)
-			//		.AllowAnyHeader()
-			//		.AllowAnyMethod();
-			//	});
-			//});
+			services.AddCors(o =>
+			{
+				o.AddPolicy("CorsPolicy", b =>
+				{
+					b.WithOrigins("http://localhost:8080");
+					b//.AllowAnyOrigin()
+					 .AllowAnyHeader()
+					 .AllowAnyMethod()
+					 .AllowCredentials()
+					 ;
+				});
+			});
 
-			services.AddCors();
+			//services.AddCors();
 
 			services.AddTransient<GeneratorModels>();
 
@@ -64,10 +63,9 @@ namespace WebApiApp
 				app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "WebApiApp v1"));
 			}
 
-			app.UseRouting();
+			app.UseCors("CorsPolicy");
 
-			//app.UseCors("MyLocalhost");
-			app.UseCors(builder => { builder.AllowAnyOrigin(); builder.AllowAnyMethod(); });
+			app.UseRouting();
 
 			app.UseAuthorization();
 
