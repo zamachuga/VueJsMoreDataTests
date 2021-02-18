@@ -24,6 +24,14 @@ namespace WebApiApp
 		{
 			DTO.GroupModel[] _Model = m_Generator.Generate(CountGroupsResult);
 
+			/// Access-Control-Allow-Origin "*"
+			///	Access-Control-Allow-Headers "origin, x-requested-with, content-type"
+			/// Access-Control-Allow-Methods "PUT, GET, POST, DELETE, OPTIONS"
+			/// 
+			HttpContext.Response.Headers.Add("Access-Control-Allow-Origin","*");
+			HttpContext.Response.Headers.Add("Access-Control-Allow-Headers", "origin, x-requested-with, content-type");
+			HttpContext.Response.Headers.Add("Access-Control-Allow-Methods", "PUT, GET, POST, DELETE, OPTIONS");
+
 			return _Model;
 		}
 	}

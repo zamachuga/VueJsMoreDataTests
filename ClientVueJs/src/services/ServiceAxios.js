@@ -10,7 +10,10 @@ class ClassServiceAxios {
 	constructor() {
 		this.m_AxiosApi = axios.create({
 			headers: {
-				"Content-Type": "application/json"
+				"Content-Type": "application/json",
+				"Access-Control-Allow-Origin": "*",
+				"Access-Control-Allow-Headers": "origin, x-requested-with, content-type, application/json, accept, */*",
+				"Access-Control-Allow-Methods": "PUT, GET, POST, DELETE, OPTIONS"
 			}
 		});
 		this.m_AxiosApiAuth = axios.create({

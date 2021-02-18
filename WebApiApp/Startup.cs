@@ -26,6 +26,22 @@ namespace WebApiApp
 		// This method gets called by the runtime. Use this method to add services to the container.
 		public void ConfigureServices(IServiceCollection services)
 		{
+			//services.AddCors(o =>
+			//{
+			//	o.AddPolicy("MyLocalhost", b =>
+			//	{
+			//		b.WithOrigins(
+			//			"localhost", "http://localhost", 
+			//			"localhost:5000", "http://localhost:5000",
+			//			"localhost:8080", "http://localhost:8080"
+			//		)
+			//		.AllowAnyHeader()
+			//		.AllowAnyMethod();
+			//	});
+			//});
+
+			services.AddCors();
+
 			services.AddTransient<GeneratorModels>();
 
 			services.AddControllers();
@@ -41,8 +57,6 @@ namespace WebApiApp
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
 		public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 		{
-			app.UseCors();
-
 			if (env.IsDevelopment())
 			{
 				app.UseDeveloperExceptionPage();
@@ -51,6 +65,9 @@ namespace WebApiApp
 			}
 
 			app.UseRouting();
+
+			//app.UseCors("MyLocalhost");
+			app.UseCors(builder => { builder.AllowAnyOrigin(); builder.AllowAnyMethod(); });
 
 			app.UseAuthorization();
 
