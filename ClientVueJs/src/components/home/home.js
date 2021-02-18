@@ -23,8 +23,11 @@ export default {
 		ApiGetGroups(){
 			let _This = this;
 
+			_This.DropDownData.CurrentId = null;
+			_This.DropDownData.CurrentText = null;
+
 			Proxy.GetGroups(
-				_This.ParametersGetRoups,
+				{'CountGroupsResult': _This.ParametersGetRoups},
 				Data => {
 					_This.Groups = Data;
 				},

@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <Compile Include="Models\DTO\GroupModel.cs" />
+    <Compile Include="Models\DTO\RequestGroupModel.cs" />
   </ItemGroup>
 
   <ItemGroup>

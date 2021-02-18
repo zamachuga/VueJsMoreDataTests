@@ -3,12 +3,18 @@
 	<div>[Компонент HOME]</div>
 
 	<div>
+		<b-form-input v-model='ParametersGetRoups'></b-form-input>
+
 		<b-button @click="ApiGetGroups()">Обновить список</b-button>
 
 		<b-dropdown split :text="DropDownData.CurrentText" class="m-2">
-			<b-dropdown-item v-for="item in Groups" :key="item.id" href="#" @click="OnSelect(item.id, item.name)">
+			<b-dropdown-item class="selector" v-for="item in Groups" :key="item.id" href="#" @click="OnSelect(item.id, item.name)">
 				{{item.name}}
 			</b-dropdown-item>
+		</b-dropdown>
+
+		<b-dropdown id="dropdown-1" text="Dropdown Button" class="m-md-2">
+			<b-dropdown-item v-for="item in Groups" :key="item.id" href="#" @click="OnSelect(item.id, item.name)">{{item.name}}</b-dropdown-item>
 		</b-dropdown>
 	</div>
 
