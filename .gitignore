@@ -351,3 +351,4 @@ MigrationBackup/
 /ClientVueJs/.vscode/
 /VueJsMoreDataTests.sln
 /ClientVueJs/dist/*
+/*.sln

@@ -69,6 +69,8 @@ namespace WebApiApp
 
 			app.UseAuthorization();
 
+			app.UseStaticFiles();
+
 			app.UseEndpoints(config =>
 			{
 				config.MapControllers();
