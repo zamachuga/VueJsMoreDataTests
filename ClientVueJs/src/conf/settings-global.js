@@ -2,7 +2,7 @@
 class ClassSettingsGlobal {
 	// Базовый URL к API
 	get UrlApi() {
-		return 'http://localhost:5000/api/';
+		return 'http://localhost:5002/api/';
 	};
 	// Базовый URL к API OAuth
 	get UrlApiOAuth() {
